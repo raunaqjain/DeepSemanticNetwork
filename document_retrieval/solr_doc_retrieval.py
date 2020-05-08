@@ -10,12 +10,12 @@ import unidecode
 nlp = en_core_web_sm.load()
 
 training_data = []
-with open("shared_task_dev.jsonl", "r") as training_file:
+with open("shared_task_dev.jsonl", "r") as training_file:         #Mention the claim file for doc retrieval
     for line in training_file:
         training_data.append(json.loads(line))
 
 # Setting up configuration for SOLR
-NO_OF_DOC_TO_PICK = 10
+NO_OF_DOC_TO_PICK = 5
 core_name = "nlp"
 no_of_rows = "20"
 ip_address = "localhost:"
